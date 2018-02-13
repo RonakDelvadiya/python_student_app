@@ -1,0 +1,7 @@
+*.pyc
+*~
+__pycache__
+student_mgmt
+db.sqlite3
+/static
+.DS_Store
