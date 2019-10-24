@@ -7,8 +7,6 @@ from student_app.serializers import *
 from django.views.decorators.csrf import csrf_exempt
 from student_app.models import *
 
-# Create your views here.
-
 @csrf_exempt
 @api_view(['POST'])
 def school_create(request):
@@ -17,6 +15,7 @@ def school_create(request):
 		serializer.save()
 		return Response(serializer.data, status=status.HTTP_201_CREATED)
 	return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @csrf_exempt
 @api_view(['POST'])
@@ -54,7 +53,6 @@ def post_details(request, pk):
 
 	serializer = PostListSerializer(post, many=False)
 	return Response(serializer.data, status=status.HTTP_200_OK)
-
 
 
 @csrf_exempt
